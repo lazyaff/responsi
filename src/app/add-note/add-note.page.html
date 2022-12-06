@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add Note</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        Add Note
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full">
+
+    <ion-item>
+      <ion-label position="floating">Judul</ion-label>
+      <ion-input required [(ngModel)]="judul" placeholder="Masukkan judul catatan" type="text">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Isi</ion-label>
+      <ion-textarea required [(ngModel)]="isi" placeholder="Masukkan isi catatan" [autoGrow]="true">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tag</ion-label>
+      <ion-select [(ngModel)]="tag" placeholder="Pilih Kategori">
+        <ion-select-option *ngFor="let item of lists" value="{{ item.id_tag }}">{{ item.nama_tag }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="addNote()" color="primary" shape="full" expand="block">Tambah Catatan
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>

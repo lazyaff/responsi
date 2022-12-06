@@ -1,0 +1,28 @@
+<ion-content class="ion-margin-top ion-padding-top">
+  <div class="form ion-padding-horizontal ion-text-center">
+    <div class="icon">
+      <ion-img src="../../assets/icon/cover.jpg"></ion-img>
+    </div>
+    <h1>Login</h1>
+    <ion-item lines="full">
+      <ion-label position="floating">Masukan Username</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="username"
+        required="required"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full" class="ion-margin-top">
+      <ion-label position="floating">Masukan Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" required="required">
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col class="ion-margin-top">
+        <ion-button type="submit" (click)="prosesLogin()"
+          >Login</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
